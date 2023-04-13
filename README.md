@@ -5,7 +5,6 @@ This project provides a user interface for a personal trainer company to interac
 ## Getting Started
 To get started with this project, first, clone the repository and install the dependencies:
 
-## Copy code
 git clone https://github.com/katazecci/TraingingApp.git
 cd trainingapp
 npm install
