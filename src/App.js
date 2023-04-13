@@ -1,3 +1,4 @@
+import './App.css'
 import Box from '@mui/material/Box';
 import React, { useState, useEffect } from 'react';
 import AppBar from '@mui/material/AppBar';
