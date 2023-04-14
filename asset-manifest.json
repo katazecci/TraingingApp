@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/TraingingApp/static/css/main.07639b9c.css",
-    "main.js": "/TraingingApp/static/js/main.d7727f79.js",
-    "static/js/787.8a4506c5.chunk.js": "/TraingingApp/static/js/787.8a4506c5.chunk.js",
-    "index.html": "/TraingingApp/index.html",
-    "main.07639b9c.css.map": "/TraingingApp/static/css/main.07639b9c.css.map",
-    "main.d7727f79.js.map": "/TraingingApp/static/js/main.d7727f79.js.map",
-    "787.8a4506c5.chunk.js.map": "/TraingingApp/static/js/787.8a4506c5.chunk.js.map"
+    "main.css": "/TrainingApp/static/css/main.07639b9c.css",
+    "main.js": "/TrainingApp/static/js/main.e38afdc8.js",
+    "static/js/787.8a4506c5.chunk.js": "/TrainingApp/static/js/787.8a4506c5.chunk.js",
+    "index.html": "/TrainingApp/index.html",
+    "main.07639b9c.css.map": "/TrainingApp/static/css/main.07639b9c.css.map",
+    "main.e38afdc8.js.map": "/TrainingApp/static/js/main.e38afdc8.js.map",
+    "787.8a4506c5.chunk.js.map": "/TrainingApp/static/js/787.8a4506c5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.07639b9c.css",
-    "static/js/main.d7727f79.js"
+    "static/js/main.e38afdc8.js"
   ]
 }
