@@ -8,6 +8,7 @@ import CustomerList from './components/customers';
 import TrainingList from './components/trainings';
 import Button from '@mui/material/Button';
 import MyCalendar from './components/calendar';
+import Statistics from './components/statistics';
 
 function App() {
   const [page, setPage] = useState('trainings');
@@ -39,12 +40,16 @@ function App() {
             <Button sx={{ color: 'white' }} onClick={() => setPage('calendar')}>
               Calendar
             </Button>
+            <Button sx={{ color: 'white' }} onClick={() => setPage('statistics')}>
+              Statistics
+            </Button>
           </Toolbar>
         </AppBar>
       </Box>
       {page === 'trainings' ? <TrainingList /> : null}
       {page === 'customers' ? <CustomerList /> : null}
       {page === 'calendar' ? <MyCalendar /> : null}
+      {page === 'statistics' ? <Statistics /> : null}
     </div>
   );
 }
