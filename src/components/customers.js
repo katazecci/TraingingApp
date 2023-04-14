@@ -9,8 +9,9 @@ import EditCustomer from './EditCustomer';
 const CustomerList = () => {
   const [customers, setCustomers] = useState([]);
 
-  useEffect(() => fetchData, []);
-
+  useEffect(() => {
+    fetchData();
+  }, []);
   
   const fetchData = () => {
     fetch('https://traineeapp.azurewebsites.net/api/customers')
