@@ -4,7 +4,9 @@ import 'ag-grid-community/styles/ag-theme-material.css';
 import 'ag-grid-community/styles/ag-grid.css';
 import Button from '@mui/material/Button';
 import AddCustomer from './AddCustomer';
-import EditCustomer from './EditCustomer'; 
+import EditCustomer from './EditCustomer';
+import { CSVLink } from 'react-csv';
+
 
 const CustomerList = () => {
   const [customers, setCustomers] = useState([]);
@@ -12,12 +14,26 @@ const CustomerList = () => {
   useEffect(() => {
     fetchData();
   }, []);
-  
+
   const fetchData = () => {
     fetch('https://traineeapp.azurewebsites.net/api/customers')
       .then(response => response.json())
       .then(data => setCustomers(data.content))
       .catch(err => console.error(err))
+  };
+
+  const getExportData = () => {
+    return customers.map(customer => {
+      return {
+        firstname: customer.firstname,
+        lastname: customer.lastname,
+        streetaddress: customer.streetaddress,
+        postcode: customer.postcode,
+        city: customer.city,
+        email: customer.email,
+        phone: customer.phone
+      };
+    });
   };
 
   const saveCustomer = customer => {
@@ -36,7 +52,7 @@ const CustomerList = () => {
 
   const updateCustomer = (url, customer) => {
     const options = {
-      method: 'put', 
+      method: 'put',
       headers: {
         'Content-Type': 'application/json'
       },
@@ -99,15 +115,18 @@ const CustomerList = () => {
 
 
   return (
-    <div className="ag-theme-material"
-      style={{height: '700px', width: '95%', margin: 'auto' }}>
-        <AddCustomer saveCustomer={saveCustomer}/>
-        <AgGridReact
-        rowData={customers}
-        columnDefs={columnDefs}
-        defaultColDef={defaultColDef}
-        rowHeight={35}
-        />
+    <div className="ag-theme-material" style={{ height: "700px", width: "95%", margin: "auto" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "10px" }}>
+        <AddCustomer saveCustomer={saveCustomer} />
+        <CSVLink
+          data={getExportData()}
+          filename="customers.csv"
+          style={{ background: "blue", color: "white", padding: "10px", borderRadius: "5px" }}
+        >
+          Export to CSV
+        </CSVLink>
+      </div>
+      <AgGridReact rowData={customers} columnDefs={columnDefs} defaultColDef={defaultColDef} rowHeight={35} />
     </div>
   );
 };

@@ -84,24 +84,24 @@ export default function AddTraining(props) {
             fullWidth
             variant="standard"
           />
-         <TextField
-          key={training.customer} // add key prop to TextField
-          margin="dense"
-          id="customer"
-          name="customer"
-          value={training.customer}
-          onChange={event => handleChangedInput(event)}
-          label="Customer"
-          select
-          fullWidth
-          variant="standard"
-        >
-          {customers.map(customer => (
-            <MenuItem key={customer.links[0].href} value={customer.links[0].href}>
-              {customer.firstname} {customer.lastname}
-            </MenuItem>
-          ))}
-        </TextField>
+          <TextField
+            key={training.customer} // add key prop to TextField
+            margin="dense"
+            id="customer"
+            name="customer"
+            value={training.customer}
+            onChange={event => handleChangedInput(event)}
+            label="Customer"
+            select
+            fullWidth
+            variant="standard"
+          >
+            {customers.map(customer => (
+              <MenuItem key={customer.links[0].href} value={customer.links[0].href}>
+                {customer.firstname} {customer.lastname}
+              </MenuItem>
+            ))}
+          </TextField>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>

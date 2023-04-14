@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import CustomerList from './components/customers';
 import TrainingList from './components/trainings';
 import Button from '@mui/material/Button';
+import MyCalendar from './components/calendar';
 
 function App() {
   const [page, setPage] = useState('trainings');
@@ -16,6 +17,8 @@ function App() {
       document.title = 'Training List';
     } else if (page === 'customers') {
       document.title = 'Customer List';
+    } else if (page === 'calendar') {
+      document.title = 'Calendar';
     }
   }, [page]);
 
@@ -27,18 +30,23 @@ function App() {
             <Typography variant="h6">
               TrainingApp
             </Typography>
-            <Button sx={{color: 'white'}} onClick={() => setPage('trainings')}>
+            <Button sx={{ color: 'white' }} onClick={() => setPage('trainings')}>
               Trainings
             </Button>
-            <Button sx={{color: 'white'}} onClick={() => setPage('customers')}>
+            <Button sx={{ color: 'white' }} onClick={() => setPage('customers')}>
               Customers
+            </Button>
+            <Button sx={{ color: 'white' }} onClick={() => setPage('calendar')}>
+              Calendar
             </Button>
           </Toolbar>
         </AppBar>
       </Box>
-      {page === 'trainings' ? <TrainingList /> : <CustomerList />}
+      {page === 'trainings' ? <TrainingList /> : null}
+      {page === 'customers' ? <CustomerList /> : null}
+      {page === 'calendar' ? <MyCalendar /> : null}
     </div>
-  );  
+  );
 }
 
 export default App;

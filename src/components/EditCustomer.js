@@ -8,7 +8,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 
 function EditCustomer(props) {
   const [open, setOpen] = useState(false);
-  const [customer, setCustomer] = useState({ 
+  const [customer, setCustomer] = useState({
     firstname: '',
     lastname: '',
     streetaddress: '',
